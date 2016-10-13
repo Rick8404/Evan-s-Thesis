@@ -1,0 +1,42 @@
+---
+title: "01_twowaytable"
+author: "Tyler Ricketts"
+date: "October 13, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Set up markdown
+library(knitr)
+opts_knit$set(root.dir = '../')
+opts_chunk$set(echo = TRUE, collapse = TRUE)
+```
+Open library for kable
+```{r, openlibraries, include = TRUE, echo = FALSE}
+library(plyr)
+library(tidyr)
+```
+
+# Read In Data
+
+This is the first time I pull in the data set off of the CSV to look at it and see what's up. I'm not sure what needs to be done to the data, but I've gotta check it out first.
+
+```{r, Check out data, include = TRUE, echo = FALSE}
+GPA_data <- read.csv('data/pairwise table.csv', head = TRUE)
+
+head(GPA_data)
+
+for(i in 1:2) {
+  # i counts col
+  for(n in 1:4) {
+    i_n_data <- GPA_data[i,n] - GPA_data[i, n-1]
+  }
+}
+
+
+
+
+```
+
+
+
